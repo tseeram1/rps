@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://debugger;",
+            "request": "launch",
+            "url": "http://debugger;"
+        }
+    ]
+}
