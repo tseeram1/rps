@@ -1,11 +1,11 @@
 function computerPlay() {
     let roll = Math.floor(Math.random() * 3);
     if (roll == 0) {
-        return "rock";
+        return "r";
     } else if (roll == 1){
-        return "paper";
+        return "p";
     } else {
-        return "scissors";
+        return "s";
     }   
 }
 
