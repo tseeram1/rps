@@ -9,8 +9,14 @@ const textarea = document.querySelector('textarea');
 const para = document.querySelector('p');
 const para2 = document.getElementById('out2');
 const reset = document.getElementById('reset');
-
+const modal = document.getElementById("myModal");
 textarea.textContent = "ROCK PAPER SCISSORS BEST OF 5!";
+const span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
 
 function computerPlay() {
   let roll = Math.floor(Math.random() * 3);
@@ -43,20 +49,36 @@ buttons.forEach((button) => {
       textarea.textContent = 'pChoice :' + pChoice + "\n" +  "cChoice :" + cChoice; 
       textarea.textContent = playRound(pChoice,cChoice);
       pChoice = '';
-      para2.textContent = "Your Score :" + pScore + " \n" + "Comp Score :" + cScore;
+      para2.textContent = "Your Score :" + pScore + "|      |" + "Comp Score :" + cScore;
     } 
     if (pScore == '5') {
       textarea.textContent = 'GAME OVER , YOU WIN!';
-
+      resetWindow('p');
     } else if (cScore == '5') {
       textarea.textContent = 'GAME OVER , YOU LOSE!';
-
+      resetWindow('c');
     }
   });
 });
 
-
-
+function resetWindow(winner) {
+  const mContent = document.querySelector('.modal-content');
+  const content = document.createElement('p');
+  const score = document.createElement('p');
+  const finalScore = document.getElementById('result');
+  const span = document.getElementsByClassName("close")[0];
+  const mHeader= document.querySelector('modal-header');
+  modal.style.display = "block";
+  if (winner == 'p') {
+    content.textContent = 'Congratulations You Win!';
+  } else {
+    content.textContent = 'Sorry You Lose!';
+  }
+  score.textContent = `Your Score = ${pScore} \n Comp Score = ${cScore}`;
+  mContent.appendChild(content);
+  mContent.appendChild(score);
+  
+}
 
 
 function playRound(pChoice, cChoice) {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,43 @@
     <link rel="stylesheet" href="./css/css.css">
     <script src="./js/js.js" defer></script>
 </head>
+
 <body>
     <div id="score">
         <p id="out"></p>
-        
+
     </div>
     <div id="container">
-        <button class="options" id="r" >Rock</button>
+        <button class="options" id="r">Rock</button>
         <button class="options" id="p">Paper</button>
         <button class="options" id="s">Scissors</button>
         <br><br>
-        <textarea  id='textarea'></textarea>
+        <textarea id='textarea'></textarea>
         <br><br>
-        <button  id="play">Play!</button>
+        <button id="play">Play!</button>
         <p id="out2"></p>
         <button id="reset" onclick="location.reload();">Reset</button>
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <p>Result</p>  
+                </div>   
+                <p id='result'></p>
+                <button class="options"onclick="location.reload();">Reset</button>
+            </div>
+            
+        </div>
+
+
+
     </div>
+
+
+
+
 </body>
+
 </html>
